@@ -1,0 +1,35 @@
+.accomplishments-section {
+  .container {
+    .features {
+      section {
+        border-top: solid 3px #f4f4f4;
+        margin-bottom: 2.25em;
+        padding-top: 2.25em;
+        &:first-child {
+          border-top: 0;
+          padding-top: 0;
+        }
+        .image {
+          border: none;
+          display: inline-block;
+          padding-right: 2.5em;
+          vertical-align: middle;
+          width: 48%;
+          img {
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+          }
+        }
+        .inner {
+          display: inline-block;
+          vertical-align: middle;
+          width: 50%;
+        }
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.contact-section {
+  border-top: solid 6px #f4f4f4;
+  .container {
+    form {
+      margin-bottom: 2.25em;
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: -2em;
+        margin-left: -2em;
+        > * {
+          padding-top: 2em;
+          padding-left: 2em;
+        }
+        .col-6 {
+          width: 50%;
+        }
+        .col-12 {
+          width: 100%;
+          textarea {
+            padding: 0.75em 1em;
+            overflow: hidden;
+            height: 10em;
+          }
+          .actions {
+            display: flex;
+            margin-left: -1.125em;
+            li {
+              padding: 0 0 0 1.125em;
+
+              .button {
+                &:hover {
+                  background-color: #a5a5a5;
+                  color: #ffffff ;
+                }
+              }
+              .button.primary {
+                background-color: $primary-green;
+                color: #fff;
+                &:hover {
+                  background-color: #5ed0b1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

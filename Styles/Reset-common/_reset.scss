@@ -1,0 +1,135 @@
+$bodycolor: #888;
+$primary-green: #4acaa8;
+@mixin headings() {
+  color: #777;
+  font-weight: 700;
+  margin: 0 0 0.5625em 0;
+}
+
+@mixin h2($value: 3.5em) {
+  font-size: $value;
+  line-height: 1.5em;
+  color: $primary-green;
+}
+
+@mixin h3($value: 1.75em) {
+  font-size: 1.75em;
+  line-height: 1.5em;
+}
+
+@mixin h4($value: 1.25em) {
+  font-size: $value;
+  line-height: 1.5em;
+}
+
+@mixin input() {
+  height: 2.75em;
+  outline: none;
+  border: none;
+  border: solid 2px #e4e4e4;
+  border-radius: 5px;
+  color: inherit;
+  padding: 0 1em;
+  width: 100%;
+  text-decoration: none;
+  &:focus {
+    border-color: $primary-green;
+  }
+}
+
+@mixin button() {
+  background-color: #989898;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  height: 2.75em;
+  line-height: 2.75em;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+select,
+textarea {
+  font: {
+    size: 16pt;
+    family: "Lato", sans-serif;
+  }
+  line-height: 1.75em;
+  color: $bodycolor;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include headings;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+p {
+  margin: 0 0 2.25em 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: solid 1px #e4e4e4;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: $primary-green;
+    border-color: transparent;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  background: #fff;
+  padding-right: 23em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: calc(100% - 4.5em);
+  width: 45em;
+  padding: 6em 0 4em 0;
+}
+
+.input {
+  @include input;
+}
+
+.button {
+  @include button;
+}

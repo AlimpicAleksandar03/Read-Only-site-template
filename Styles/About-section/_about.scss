@@ -1,0 +1,23 @@
+.about-section {
+  .image-main {
+    background-image: url("/Read-Only-site-template/Images/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    height: 20em;
+  }
+  .container {
+    header {
+      p {
+        color: #777;
+        font: {
+          size: 1.75em;
+          weight: 700;
+        }
+        margin-top: -0.75em;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
