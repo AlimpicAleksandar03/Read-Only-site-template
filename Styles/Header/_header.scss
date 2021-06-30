@@ -9,8 +9,10 @@
   justify-content: space-between;
   background-color: $primary-green;
   overflow-y: auto;
+  overflow-x: hidden;
   text-align: center;
   z-index: 100;
+  transition: all 0.5s ease;
   header {
     padding: 3em;
     .avatar {
@@ -54,6 +56,7 @@
           display: block;
           padding: 0.85em 0;
           transition: none;
+          &:active,
           &:focus {
             background-color: #fff;
             color: $primary-green;

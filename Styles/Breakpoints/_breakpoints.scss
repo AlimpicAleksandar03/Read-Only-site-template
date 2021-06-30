@@ -1,0 +1,294 @@
+@mixin breakpoints($breakpoint) {
+  @if ($breakpoint == 1680) {
+    @media screen and (max-width: 1680px) {
+      @content;
+    }
+  } @else if ($breakpoint == 1280) {
+    @media screen and (max-width: 1280px) {
+      @content;
+    }
+  } @else if ($breakpoint == 1024) {
+    @media screen and (max-width: 1024px) {
+      @content;
+    }
+  } @else if($breakpoint == 736) {
+    @media screen and (max-width: 736px) {
+      @content;
+    }
+  } @else if($breakpoint == 480) {
+    @media screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+body,
+input,
+select,
+textarea {
+  @include breakpoints(480) {
+    font-size: 12pt;
+  }
+
+  @include breakpoints(1024) {
+    overflow-x: hidden;
+  }
+
+  @include breakpoints(1280) {
+    font-size: 11pt;
+  }
+
+  @include breakpoints(1680) {
+    font-size: 13pt;
+  }
+
+  @include breakpoints(736) {
+    h3 {
+      font-size: 1.5em;
+    }
+    h4 {
+      font-size: 1em;
+    }
+  }
+}
+
+.header {
+  @include breakpoints(1680) {
+    width: 21em;
+    header {
+      padding: 2em;
+    }
+    footer {
+      padding: 1.5em;
+    }
+  }
+
+  @include breakpoints(1280) {
+    width: 20em;
+  }
+
+  @include breakpoints(1024) {
+    transform: translateX(23em);
+    footer {
+      margin-top: 0.5em;
+    }
+  }
+
+  @include breakpoints(736) {
+    width: 17em;
+    transform: translateX(17em);
+    header {
+      padding: 2em;
+      .avatar {
+        margin: 0 auto 1.6875em auto;
+        width: 6em;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      p {
+        margin: 1em 0 0 0;
+      }
+    }
+    br {
+      display: none;
+    }
+  }
+}
+
+.wrapper {
+  @include breakpoints(1680) {
+    padding-right: 21em;
+  }
+  @include breakpoints(1280) {
+    padding-right: 20em;
+  }
+  @include breakpoints(1024) {
+    padding: 44px 0 1px 0;
+  }
+}
+
+.main .container {
+  @include breakpoints(1680) {
+    padding: 4em 0 2em 0;
+  }
+  @include breakpoints(1280) {
+  }
+  @include breakpoints(1024) {
+    width: 100%;
+  }
+  @include breakpoints(736) {
+    padding: 2em 0 0 0;
+  }
+  @include breakpoints(480) {
+    max-width: calc(100% - 3.375em);
+  }
+}
+
+.about-section {
+  @include breakpoints(736) {
+    .image-main {
+      height: 12em;
+    }
+    .container {
+      header {
+        h2 {
+          font-size: 2.5em;
+        }
+        p {
+          font-size: 1.5em;
+
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.services-section {
+  @include breakpoints(480) {
+    .container {
+      .icons {
+        li {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.accomplishments-section {
+  .container {
+    @include breakpoints(736) {
+      .features {
+        section {
+          .image {
+            display: block;
+            margin: 0 0 2.25em 0;
+            padding-right: 0;
+            width: 100%;
+          }
+          .inner {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-section {
+  .container {
+    @include breakpoints(1280) {
+      form {
+        .row {
+          margin-top: -1.5em;
+          > * {
+            padding-top: 1.5em;
+            padding-left: 1.5em;
+          }
+        }
+      }
+    }
+    @include breakpoints(736) {
+      form {
+        .row {
+          margin-top: -1.25em;
+          > * {
+            padding-top: 1.25em;
+            padding-left: 1.25em;
+          }
+        }
+      }
+    }
+    @include breakpoints(480) {
+      form {
+        .row {
+          .col-12 {
+            .actions {
+              flex-direction: column;
+              li:last-child {
+                padding-top: 1.125em;
+              }
+            }
+          }
+          .col-12-xsmall {
+            width: 100%;
+          }
+        }
+      }
+      .button {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+.footer {
+  .container {
+    @include breakpoints(736) {
+      .copyright {
+        li {
+          border-left: 0;
+          display: block;
+          line-height: 1.75em;
+          margin: 0.75em 0 0 0;
+          padding-left: 0;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-bar {
+  @include breakpoints(1024) {
+    display: block !important;
+    .title {
+      color: #fff;
+      display: block;
+      font-weight: 700;
+      height: 44px;
+      line-height: 44px;
+      padding: 0 1em;
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+.is-menu-visible {
+  @include breakpoints(1024) {
+    .header {
+      transform: translateX(0em);
+      width: 23em;
+    }
+
+    .menu-bar {
+      transform: translateX(-23em);
+    }
+
+    .wrapper {
+      transform: translateX(-23em);
+    }
+  }
+
+  @include breakpoints(736) {
+    .header {
+      width: 17em;
+    }
+    .menu-bar {
+      transform: translateX(-17em);
+    }
+    .wrapper {
+      transform: translateX(-17em);
+    }
+  }
+}

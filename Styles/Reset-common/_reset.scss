@@ -74,6 +74,10 @@ textarea {
   background-color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -117,13 +121,17 @@ ul {
 .wrapper {
   background: #fff;
   padding-right: 23em;
+  transition: all 0.5s ease;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: calc(100% - 4.5em);
-  width: 45em;
-  padding: 6em 0 4em 0;
+.main,
+.footer {
+  .container {
+    margin: 0 auto;
+    max-width: calc(100% - 4.5em);
+    width: 45em;
+    padding: 6em 0 4em 0;
+  }
 }
 
 .input {

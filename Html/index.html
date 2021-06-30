@@ -12,7 +12,7 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="header">
+    <section class="header" id="header">
       <header>
         <div class="image avatar">
           <img src="../Images/avatar.jpg" alt="" />
@@ -29,16 +29,20 @@
       <div class="nav">
         <ul>
           <li>
-            <a href="#">About</a>
+            <a href="#about-section" class="link1 link" onblur="removeLink()"
+              >About</a
+            >
           </li>
           <li>
-            <a href="#">Things I Can Do</a>
+            <a href="#services-section" class="link2 link">Things I Can Do</a>
           </li>
           <li>
-            <a href="#">A Few Accomplishments</a>
+            <a href="#accomplishments-section" class="link3 link"
+              >A Few Accomplishments</a
+            >
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#contact-section" class="link4 link">Contact</a>
           </li>
         </ul>
       </div>
@@ -73,7 +77,7 @@
                 Just an incredibly simple responsive site
                 <br />
                 template freebie by
-                <a href="#">HTML5UP</a>.
+                <a href="#">HTML5 UP</a>.
               </p>
             </header>
             <p>
@@ -224,5 +228,22 @@
         </div>
       </div>
     </div>
+    <div class="menu-bar">
+      <a href="#header" class="trigger">
+        <i class="fas fa-bars"></i>
+      </a>
+      <span class="title">
+        <a href="#">Aleksandar Alimpic</a>
+      </span>
+    </div>
+    <script>
+      const body = document.querySelector("body");
+      const trigger = document.querySelector(".trigger");
+      const wrapper = document.querySelector(".wrapper");
+      trigger.addEventListener("click", addClass);
+      function addClass() {
+        body.classList.toggle("is-menu-visible");
+      }
+    </script>
   </body>
 </html>

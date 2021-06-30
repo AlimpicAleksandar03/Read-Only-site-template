@@ -15,6 +15,10 @@ textarea {
   background-color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -64,9 +68,11 @@ ul {
 .wrapper {
   background: #fff;
   padding-right: 23em;
+  transition: all 0.5s ease;
 }
 
-.container {
+.main .container,
+.footer .container {
   margin: 0 auto;
   max-width: calc(100% - 4.5em);
   width: 45em;
@@ -117,8 +123,10 @@ ul {
   justify-content: space-between;
   background-color: #4acaa8;
   overflow-y: auto;
+  overflow-x: hidden;
   text-align: center;
   z-index: 100;
+  transition: all 0.5s ease;
 }
 .header header {
   padding: 3em;
@@ -167,7 +175,7 @@ ul {
   padding: 0.85em 0;
   transition: none;
 }
-.header .nav ul li a:focus {
+.header .nav ul li a:active, .header .nav ul li a:focus {
   background-color: #fff;
   color: #4acaa8;
 }
@@ -307,17 +315,14 @@ ul {
   background-color: #5ed0b1;
 }
 
-.footer {
-  background: #fafafa;
-  color: #c0c0c0;
-  overflow: hidden;
-  padding: 4em 0 2em 0;
-}
 .footer .container {
   padding: 0;
 }
 .footer .container .copyright {
   line-height: 1em;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.25em;
 }
 .footer .container .copyright li {
   border-left: solid 1px #d4d4d4;
@@ -330,6 +335,291 @@ ul {
   border-left: 0;
   margin-left: 0;
   padding-left: 0;
+}
+
+.menu-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 44px;
+  transition: all 0.5s ease;
+  width: 100%;
+  z-index: 100;
+  background: #222;
+  color: #fff;
+  min-width: 320px;
+}
+.menu-bar a {
+  color: #fff;
+  border: none;
+}
+.menu-bar .trigger {
+  text-decoration: none;
+  height: 44px;
+  width: 64px;
+  position: absolute;
+  top: 0;
+  border: 0;
+  outline: 0;
+  right: 0;
+  background-color: #4acaa8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+  body,
+input,
+select,
+textarea {
+    font-size: 12pt;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body,
+input,
+select,
+textarea {
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 1280px) {
+  body,
+input,
+select,
+textarea {
+    font-size: 11pt;
+  }
+}
+@media screen and (max-width: 1680px) {
+  body,
+input,
+select,
+textarea {
+    font-size: 13pt;
+  }
+}
+@media screen and (max-width: 736px) {
+  body h3,
+input h3,
+select h3,
+textarea h3 {
+    font-size: 1.5em;
+  }
+  body h4,
+input h4,
+select h4,
+textarea h4 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .header {
+    width: 21em;
+  }
+  .header header {
+    padding: 2em;
+  }
+  .header footer {
+    padding: 1.5em;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .header {
+    width: 20em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    transform: translateX(23em);
+  }
+  .header footer {
+    margin-top: 0.5em;
+  }
+}
+@media screen and (max-width: 736px) {
+  .header {
+    width: 17em;
+    transform: translateX(17em);
+  }
+  .header header {
+    padding: 2em;
+  }
+  .header header .avatar {
+    margin: 0 auto 1.6875em auto;
+    width: 6em;
+  }
+  .header header h1 {
+    font-size: 1.5em;
+  }
+  .header header p {
+    margin: 1em 0 0 0;
+  }
+  .header br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .wrapper {
+    padding-right: 21em;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    padding-right: 20em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    padding: 44px 0 1px 0;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .main .container {
+    padding: 4em 0 2em 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 736px) {
+  .main .container {
+    padding: 2em 0 0 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main .container {
+    max-width: calc(100% - 3.375em);
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .about-section .image-main {
+    height: 12em;
+  }
+  .about-section .container header h2 {
+    font-size: 2.5em;
+  }
+  .about-section .container header p {
+    font-size: 1.5em;
+  }
+  .about-section .container header p br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-section .container .icons li {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .accomplishments-section .container .features section .image {
+    display: block;
+    margin: 0 0 2.25em 0;
+    padding-right: 0;
+    width: 100%;
+  }
+  .accomplishments-section .container .features section .inner {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .contact-section .container form .row {
+    margin-top: -1.5em;
+  }
+  .contact-section .container form .row > * {
+    padding-top: 1.5em;
+    padding-left: 1.5em;
+  }
+}
+@media screen and (max-width: 736px) {
+  .contact-section .container form .row {
+    margin-top: -1.25em;
+  }
+  .contact-section .container form .row > * {
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact-section .container form .row .col-12 .actions {
+    flex-direction: column;
+  }
+  .contact-section .container form .row .col-12 .actions li:last-child {
+    padding-top: 1.125em;
+  }
+  .contact-section .container form .row .col-12-xsmall {
+    width: 100%;
+  }
+  .contact-section .container .button {
+    width: 100%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .footer .container .copyright li {
+    border-left: 0;
+    display: block;
+    line-height: 1.75em;
+    margin: 0.75em 0 0 0;
+    padding-left: 0;
+  }
+  .footer .container .copyright li:first-child {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .menu-bar {
+    display: block !important;
+  }
+  .menu-bar .title {
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 1em;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .is-menu-visible .header {
+    transform: translateX(0em);
+    width: 23em;
+  }
+  .is-menu-visible .menu-bar {
+    transform: translateX(-23em);
+  }
+  .is-menu-visible .wrapper {
+    transform: translateX(-23em);
+  }
+}
+@media screen and (max-width: 736px) {
+  .is-menu-visible .header {
+    width: 17em;
+  }
+  .is-menu-visible .menu-bar {
+    transform: translateX(-17em);
+  }
+  .is-menu-visible .wrapper {
+    transform: translateX(-17em);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

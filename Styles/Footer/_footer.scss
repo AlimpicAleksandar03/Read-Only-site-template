@@ -1,12 +1,11 @@
 .footer {
-  background: #fafafa;
-  color: #c0c0c0;
-  overflow: hidden;
-  padding: 4em 0 2em 0;
   .container {
     padding: 0;
     .copyright {
       line-height: 1em;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2.25em;
       li {
         border-left: solid 1px #d4d4d4;
         display: inline-block;
